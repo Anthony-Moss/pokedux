@@ -99,11 +99,11 @@ function visibility(state=initialState.visibilityFilter, action={type: ''}) {
         case ACTION_VISIBILITY_ALL:
             // console.log(`visibility got called with ${action.payload.id}`)
             return VISIBILITY_ALL
-            break;
+        break;
         case ACTION_VISIBILITY_CAUGHT:
             // set visability to caught
             return VISIBILITY_CAUGHT
-            break;
+        break;
         case ACTION_VISIBILITY_UNCAUGHT:
             // set visibility to uncaught
             return VISIBILITY_UNCAUGHT
