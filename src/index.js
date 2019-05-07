@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 // ===========================================================================
 // State
+import { createStore } from 'redux';
 import initialState from './base.json';
 import { type } from 'os';
 console.log(initialState);
@@ -28,10 +29,12 @@ function catchCard(id) {
         }
     }
 }
+window.catchCard = catchCard;
 // ================================================================================
 // Reducer
 
 function cards(state=initialState, action={type: ''}) {
+    console.log(`cards got called with ${action.payload}`)
     switch(action.type) {
         case ACTION_CATCH:
             // find the card, set it to 'caught'
@@ -44,7 +47,8 @@ function cards(state=initialState, action={type: ''}) {
 
 // ================================================================================
 // Store
-
+const store = createStore(cards);
+window.store = store;
 
 
 
