@@ -6,6 +6,7 @@
 import { connect } from 'react-redux';
 import Pokedex from '../components/Pokedex';
 import { catchCard } from '../actions-reducers';
+import VisibilityButton from '../components/VisibilityButton';
 
 
 
@@ -15,10 +16,12 @@ import { catchCard } from '../actions-reducers';
 
 // 'translate' from redux state to react props
 const mapStateToProps = (state) => {
+    console.log(state);
     // return our own custom props object
     return {
         // react: redux
-        cards: state.cards
+        cards: state.cards,
+        visibilityFilter: state.visibilityFilter
     }
 };
 
@@ -36,9 +39,11 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
+
+
 // connect gives us a function that knows how to 
 // translate for a dumb component 
 const makeComponentSmart = connect(mapStateToProps, mapDispatchToProps);
-const SmartPokedex = makeComponentSmart(Pokedex);
+const SmartPokedex = makeComponentSmart(Pokedex, VisibilityButton);
 
 export default SmartPokedex;

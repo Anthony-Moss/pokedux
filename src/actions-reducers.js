@@ -63,7 +63,7 @@ window.setVisibilityUncaught = setVisibilityUncaught;
 // Reducer
 
 function cards(state=initialState.cards, action={type: ''}) {
-    console.log(`cards got called with ${action.payload}`);
+    // console.log(`cards got called with ${action.payload}`);
 
     switch(action.type) {
         case ACTION_CATCH:
